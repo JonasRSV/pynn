@@ -1,8 +1,13 @@
-# PyNN
+<div style="flex-layout: row;" >
+  <img src="images/title.png"/>
+  <img src="images/nn.png"/>
+</div>
 
 ---
 
-A NN library written with numpy and halo for the progress bar.
+A NN library written with numpy no other dependencies, except Halo for the progress bar.
+
+Currently supports dense networks and sequential models. 
 
 
 ## Installation
