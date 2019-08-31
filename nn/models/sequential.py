@@ -48,6 +48,10 @@ class Sequential(Model):
         if len(X) != len(Y):
             raise ValueError("length of domain is not same as labels -- domain: %s, labels: %s" % (len(X), len(Y)))
 
+        if Y.shape[1:] != self.layers[-1].shape:
+            raise ValueError("Label and network output dimension does not match %s != %s"
+                             % (Y.shape[1:], self.layers[-1].shape))
+
         indexes = np.arange(len(X))
         spinner = halo.Halo(text="Starting Training", spinner="dots")
 

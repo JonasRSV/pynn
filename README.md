@@ -2,7 +2,8 @@
 
 ---
 
-A NN library written with only numpy and halo for progress bar
+A NN library written with numpy and halo for the progress bar.
+
 
 ## Installation
 ---
@@ -15,11 +16,12 @@ $ python3 setup.py install
 
 Example
 
-```python
+```python3
 from nn.models import Sequential
 from nn.layers import Dense, Input
 from nn.optimisers import SGDOptimiser
 from nn.losses import Msq
+import numpy as np
 
 model = Sequential()
 # Always assumes 0th dimension is variable size
@@ -35,7 +37,10 @@ model.compile(optimiser=SGDOptimiser(learning_rate=1e-3), loss=Msq())
 X = np.random.rand(10000, 5)
 Y = np.sin(X)
 
-model.train(X, Y, 64, 10, True)
+model.train(X, Y, batch_sz=64, epochs=10, shuffle=True)
+
+# To predict using the model
+# model.predict(X)
 ```
 
 output
