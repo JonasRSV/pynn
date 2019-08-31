@@ -4,6 +4,14 @@
 
 A NN library written with only numpy and halo for progress bar
 
+## Installation
+---
+```bash
+$ git clone https://github.com/JonasRSV/pynn
+$ cd pynn
+$ python3 setup.py install
+```
+
 
 Example
 
